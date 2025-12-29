@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { Space_Grotesk, DM_Sans, JetBrains_Mono } from "next/font/google";
+import { Analytics } from "@vercel/analytics/react";
 import "./globals.css";
 import Navigation from "@/components/Navigation";
 
@@ -43,6 +44,7 @@ export default function RootLayout({
       <body className="font-body min-h-screen">
         <Navigation />
         <main className="pt-20">{children}</main>
+        <Analytics />
       </body>
     </html>
   );
