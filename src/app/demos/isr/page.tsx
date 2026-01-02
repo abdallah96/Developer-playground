@@ -29,12 +29,12 @@ function generateProducts(): Product[] {
   }));
 }
 
-export const revalidate = 600;
+export const revalidate = 120;
 
 export default function ISRPage() {
   const products = generateProducts();
   const generatedAt = new Date().toISOString();
-  const nextRevalidation = new Date(Date.now() + 600000).toISOString();
+  const nextRevalidation = new Date(Date.now() + 120000).toISOString();
 
   return (
     <div className="min-h-screen py-12">
@@ -48,7 +48,7 @@ export default function ISRPage() {
             Incremental Static Regeneration
           </h1>
           <p className="text-lg text-midnight-300 max-w-2xl mb-6">
-            This page regenerates every 10 minutes. It combines the speed of static
+            This page regenerates every 2 minutes. It combines the speed of static
             pages with the freshness of dynamic content.
           </p>
 
@@ -105,7 +105,7 @@ export default function ISRPage() {
                 <div>
                   <h3 className="font-semibold mb-1">Revalidate</h3>
                   <p className="text-sm text-midnight-400">
-                    After 10 min, page regenerates
+                    After 2 min, page regenerates
                   </p>
                 </div>
               </div>
@@ -188,11 +188,11 @@ export default function ISRPage() {
             <h3 className="font-semibold mb-3">Code Example</h3>
             <pre className="font-mono text-sm text-midnight-300 bg-black/30 p-4 rounded-lg overflow-x-auto">
 {`// Set revalidation period (in seconds)
-export const revalidate = 600; // 10 minutes
+export const revalidate = 120; // 2 minutes
 
 export default async function ISRPage() {
   // This data will be fetched at build time
-  // and revalidated every 10 minutes
+  // and revalidated every 2 minutes
   const products = await fetchProducts();
   
   return <ProductGrid products={products} />;
