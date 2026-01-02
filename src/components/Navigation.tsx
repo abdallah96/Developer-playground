@@ -11,6 +11,7 @@ const navLinks = [
   { href: "/demos/ssr", label: "SSR" },
   { href: "/demos/ssg", label: "SSG" },
   { href: "/demos/isr", label: "ISR" },
+  { href: "/demos/csr", label: "CSR" },
   { href: "/demos/api", label: "API" },
   { href: "/demos/lazy", label: "Lazy" },
   { href: "/docs", label: "Docs" },

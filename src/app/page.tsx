@@ -24,17 +24,24 @@ const features = [
   },
   {
     title: "ISR Demo",
-    description: "Incremental static regeneration with 10-minute revalidation.",
+    description: "Incremental static regeneration with 2-minute revalidation.",
     href: "/demos/isr",
     icon: "🔄",
     gradient: "from-midnight-400 to-ember-400",
+  },
+  {
+    title: "CSR Demo",
+    description: "Client-side rendering with data fetching in the browser.",
+    href: "/demos/csr",
+    icon: "💻",
+    gradient: "from-ember-400 to-jade-400",
   },
   {
     title: "API Routes",
     description: "Serverless API endpoints returning JSON data.",
     href: "/demos/api",
     icon: "🔌",
-    gradient: "from-ember-400 to-jade-400",
+    gradient: "from-jade-400 to-midnight-400",
   },
   {
     title: "Documentation",

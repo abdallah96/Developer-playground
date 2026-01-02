@@ -218,11 +218,38 @@ export default function StaticPage() {
 ISR pages regenerate after a specified time period.
 
 \`\`\`tsx
-// Revalidate every 10 minutes (600 seconds)
-export const revalidate = 600;
+// Revalidate every 2 minutes (120 seconds)
+export const revalidate = 120;
 
 export default async function ISRPage() {
   const data = await fetchData();
+  return <Content data={data} />;
+}
+\`\`\`
+
+## Client-Side Rendering (CSR)
+
+CSR pages fetch data in the browser after the page loads.
+
+\`\`\`tsx
+"use client";
+
+import { useState, useEffect } from "react";
+
+export default function CSRPage() {
+  const [data, setData] = useState([]);
+  const [loading, setLoading] = useState(true);
+
+  useEffect(() => {
+    fetch("https://api.example.com/data")
+      .then(res => res.json())
+      .then(data => {
+        setData(data);
+        setLoading(false);
+      });
+  }, []);
+
+  if (loading) return <div>Loading...</div>;
   return <Content data={data} />;
 }
 \`\`\`
