@@ -13,7 +13,7 @@ const config: StorybookConfig = {
   },
   staticDirs: ["../public"],
   webpackFinal: async (config) => {
-    config.devtool = "eval-cheap-module-source-map";
+    config.devtool = false;
     return config;
   },
 };
